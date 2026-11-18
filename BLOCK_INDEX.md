@@ -1,0 +1,22 @@
+## Snippet Block Map
+
+- **A2-01** → `.env.local` — Create from .env.example; use your own Atlas URI and a long random JWT secret.
+- **A2-02** → `lib/mongodb.js` — Shared MongoDB connection helper (server only).
+- **A2-03** → `app/api/health/route.js` — Test Atlas connectivity before building auth.
+- **A2-04** → `scripts/seed-users.mjs` — Seed two hashed-password demo users and create unique indexes; NEVER submit credentials.
+- **A2-05** → `lib/auth.js` — Server-only JWT helpers. Verify cookie, then load current status/role from Atlas.
+- **A2-06** → `app/api/auth/login/route.js` — Postman: POST valid/invalid credentials and observe Set-Cookie.
+- **A2-07** → `app/api/auth/me/route.js` — Postman GET current authenticated user; a missing cookie returns 401.
+- **A2-08** → `app/api/auth/logout/route.js` — Logout clears browser cookie, but cannot revoke an already copied JWT.
+- **A2-09** → `app/api/admin/users/route.js` — Demonstrate backend authorization with 401, 403, and 200.
+- **A2-10** → `components/AuthProvider.jsx` — Provide user state across Navbar, Login, Dashboard. Students complete two TODOs.
+- **A2-11** → `components/AccountNav.jsx` — Client Navbar with shared AuthContext; students add a role-specific link.
+- **A2-12** → `app/login/page.jsx` — Student creates login page, event handler and error UI; below is a reference pattern to adapt.
+- **A2-13** → `app/api/favorites/route.js` — Read and create favorites, using authenticated user id from server, not client body.
+- **A2-14** → `app/api/favorites/[id]/route.js` — Delete own favourite: id here is artworkId, not MongoDB _id.
+- **A2-15** → `components/FavoritesProvider.jsx` — Shared favorite IDs/count, refreshed from the server after mutations.
+- **A2-16** → `components/FavoriteButton.jsx` — Reusable client Favorite button for cards and detail page.
+- **A2-17** → `app/favorites/page.jsx` — List personal favorite IDs and link to artwork detail; students add note editing.
+- **A2-18** → `app/api/preferences/route.js` — Read/update authenticated user theme with server-side validation.
+- **A2-19** → `app/profile/page.jsx` — Student builds a client profile page reading AuthContext and saving theme preference.
+- **A2-20** → `app/admin/page.jsx` — Admin client view, but backend GET /api/admin/users is the real security check.

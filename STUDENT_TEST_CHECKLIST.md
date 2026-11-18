@@ -1,0 +1,13 @@
+# Test checklist
+- Public: /, /artwork, /search, /about, /artwork/[id]
+- Atlas ping: GET /api/health -> 200
+- Invalid login -> 401; correct login -> 200 + HttpOnly cookie
+- GET /api/auth/me without/with cookie -> 401/200
+- GET /api/admin/users as guest/student/admin -> 401/403/200
+- POST favorite as guest -> 401
+- POST favorite as student -> 201; GET -> new saved item; duplicate POST -> one row
+- PATCH favorite note -> persisted in Atlas; DELETE -> removed
+- Login as second user -> cannot view another user’s favorites
+- Save preference -> refresh -> still present in Atlas
+- Logout -> /api/auth/me returns 401
+- Deployed Vercel URL passes all key tests

@@ -1,0 +1,21 @@
+{
+  "name": "ite5425-a2-guided-build",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^16.6.1",
+    "jose": "^6.2.17",
+    "mongodb": "^6.22.0",
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.60.0",
+    "server-only": "^0.0.1"
+  }
+}
